@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--set attribute defines a set of transformations that occur over the course of this particular animation.
+More than one transformation can happen during the animation, and that each element of the set will run
+in parallel.-->
+
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fillAfter="true"
+    android:interpolator ="@android:anim/bounce_interpolator">
+    <scale
+        android:duration = "2000"
+        android:fromXScale="2.0"
+        android:fromYScale="2.0"
+        android:pivotX="50%"
+        android:pivotY="50%"
+        android:toXScale="1.0"
+        android:toYScale="1.0"/>
+</set>
+
+    <!--In the set tag, we added two attributes
+    fillAfter - true means your view (button) will not return to original position before the animation.
+    Instead, it will remain at the final position at the end of the animation.
+    interpolator - defines acceleration cure for the animation (In this case, you set it to the pre-defined
+    bounce_interpolator which comes with android.
+
+    scale tag defines your bounce animation. As the tag indicates, you'll be carrying out a transformation where
+    you scale the button up and down to make it look as if it was bouncing.
+
+    duration attribute defines how long the transformation will take. The values are in milliseconds
+    fromXScale and fromYScale attributes specify the starting scale for the animation. Here you indicate that
+    the animation should start at twice the width and height of the button.
+
+    The pivotX and pivotY values indicate the pivot point or the origin for the animation. (where 0% for both
+    pivotX and pivotY values would be the top left and 100% for both would be the bottom right. Here we want to
+    start from center.
+
+    The toXScale and toYScale attributes indicate the final scale value for the transformation. Here, you want the button
+    to go to its original scale. so you can set both attributes to 1.0.-->
